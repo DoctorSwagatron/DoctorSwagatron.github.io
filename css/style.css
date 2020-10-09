@@ -43,4 +43,8 @@ label {
 	margin: 5px;
 }
 
-/* this is a change to see if i can push */
+
+input,
+button{
+	padding: .5rem;
+}

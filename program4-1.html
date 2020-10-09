@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIT 160 Program 4.1 - Kevin Davis</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 4: Adding Two Numbers</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Add Two Numbers</h3>
+        <label>Enter Number One: <input type="text" id="number1"></label> <!--this is a text input box; input is a self-closing tag--> 
+        <label>Enter Number Two: <input type="text" id="number2"></label>
+        <label><button type="button" onclick="addNumbers()">Add Numbers</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        function addNumbers(){
+            //INPUT
+            let number1 = document.getElementById("number1").value;
+            let number2 = document.getElementById("number2").value;
+            //PROCESSING
+                //Lab Notes: String, Number (int, float), booleon(T/F)
+             //Convert the input to floats 
+             number1 = parseFloat(number1);   //parseFloat is string conversion 
+             number2 = parseFloat(number2);
+             // add the two numbers and store as an output variable
+             let sum = number1 + number2;
+            //OUTPUT
+            document.getElementById("output").innerHTML = "The sum is " + sum; 
+        }
+        //let x = 0; //<!--Variable. Can be set and reset--> "Let x = 0; 'x' is an identifier. "
+        //const //<!-- unchanging variable. can't be modified. -->
+        //var //also a variable. Used more for FUNCTIONS 
+    </script>
+</body>
+
+</html>
