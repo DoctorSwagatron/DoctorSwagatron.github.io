@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 5: Test Review </h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>test review</h3>
+        <label>Enter the value of m: <input type="text" id="WhatIsM"></label> <!--this is a text input box; input is a self-closing tag--> 
+        <label><button type="button" onclick="aFunction()">a function</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p id="output1"></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+     function aFunction() {
+        let x = 4.2;
+    let y = 3;
+    let result = Math.round(x * y);
+        //output
+        document.getElementById("output1").innerHTML = result;
+    }
+    </script>
+</body>
+
+</html>

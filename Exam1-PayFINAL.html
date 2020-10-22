@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Exam 1 Pay Calculator</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Calculate pay based on hours worked</h3>
+        <label>Enter regular time hours worked: <input type="text" id="regular"></label> <!--this is a text input box; input is a self-closing tag--> 
+        <label>Enter overtime hours worked: <input type="text" id="overtime"></label>
+        <label><button type="button" onclick="calculate_pay()">Calculate Pay</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p><span id="output"></span></p>
+        
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        function calculate_pay() {
+        //input
+        let reg = parseFloat(document.getElementById ("regular").value);
+        let ot = parseFloat(document.getElementById ("overtime").value);
+
+        //processing
+        let gross_payout = (reg * 15) + (ot * 22.5);
+        let net_payout = gross_payout * .85;
+        //output
+        document.getElementById("output").textContent = "You earned $" + net_payout.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

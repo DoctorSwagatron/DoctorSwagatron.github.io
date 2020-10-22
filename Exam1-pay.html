@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Exam 1 pay</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Calculate Amount Earned</h3>
+        <label>Enter hours worked: <input type="text" id="hours"></label>
+        <label><button type="button" onclick="payCalculator()">Hours Worked</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        function payCalculator(){
+        //Variables
+        let hours = parseFloat(document.getElementById('hours').value);
+        //Processing
+        if (hours > 40) {
+            let total = hours * 22.5 + 600;
+        } else {
+            let total = hours * 15;
+            
+        }
+        //Output
+        document.getElementById("output").textContent = total.toFixed(2);
+
+        }
+    </script>
+</body>
+
+</html>
