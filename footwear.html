@@ -15,8 +15,16 @@
     </header>
     <main>
         <h3>Determine what footwear is appropriate</h3>
-        <label>What is the weather like today? <input type="text" id="weather"></label> <!--this is a text input box; input is a self-closing tag--> 
-        <label><button type="button" onclick="footwear()">Generate Decision</button></label>
+        <label>What is the weather like today?
+            <select name="weather" id="weather">
+                <option value="" disabled selected>--Please choose an option--</option>
+                <option value="Snow">Snow</option>
+                <option value="Rain">Rain</option>
+                <option value="Hot">Hot</option>
+                <option value="Unknown">Unknown</option>
+            </select>
+        </label>
+        <label><button type="button" onclick="footwear()">Shoe Decision</button></label>
         <hr> <!--Horizontal rule (self closing)-->
         <p><span id="output"></span></p>
     </main>
