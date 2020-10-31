@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 7: Alarm</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Conditions for Alarm Clock</h3>
+        <label><button type="button" onclick="wakeyWakeyEggsAndBakey()">Should I set an alarm?</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+<script>
+function wakeyWakeyEggsAndBakey(){
+//inputs
+let now = new Date();
+let month = now.getMonth();
+let dayOfMonth = now.getDate();
+let dayOfWeek = now.getDay();
+let youShould = "";
+//processing
+   //Checks if it's a weekday or not - base of code. 
+if (dayOfWeek != (0 || 6)){
+    let youShould = "True";
+}else if (dayOfWeek == (0||6)) {
+    let youShould = "False";
+    ///Specific Holiday Exceptions 
+}else if ((month == 0 && dayOfMonth == 0)||(month == 6 && dayOfMonth == 3)||(month == 11 && dayOfMonth == 24)||(month == 9 && dayOfMonth == 30)){
+    let youShould = "It's a holiday."
+}
+
+//outputs
+if (youShould == "True"){
+    document.getElementById('output').textContent = "You should get up.";
+}else if (youShould == "It's a holiday."){
+    document.getElementById('output').textContent = "It's a holiday. You should sleep in.";
+    
+}else if (youShould == "False"){ 
+    document.getElementById('output').textContent = "You should sleep in.";
+}else{
+    document.getElementById('output').textContent = "This is an error message.";
+} 
+    
+  }
+</script>
+</body>
+
+</html>
