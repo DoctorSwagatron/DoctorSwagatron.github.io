@@ -33,12 +33,18 @@ let youShould = "";
 //processing
    //Checks if it's a weekday or not - base of code. 
 if (dayOfWeek != (0 || 6)){
-    let youShould = "True";
-}else if (dayOfWeek == (0||6)) {
-    let youShould = "False";
+    youShould = "True";
     ///Specific Holiday Exceptions 
-}else if ((month == 0 && dayOfMonth == 0)||(month == 6 && dayOfMonth == 3)||(month == 11 && dayOfMonth == 24)||(month == 9 && dayOfMonth == 30)){
-    let youShould = "It's a holiday."
+}else if (month == 0 && dayOfMonth == 1){ //NYD 
+    youShould = "It's a holiday.";
+}else if (month == 6 && dayOfMonth == 4){
+    youShould = "It's a holiday."
+}else if (month == 11 && dayOfMonth == 25){ //Christmas
+    youShould = "It's a holiday.";
+}else if (dayOfWeek == (0||6)){
+    youShould = "False";
+}else{
+    youShould = "True";
 }
 
 //outputs
