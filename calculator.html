@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 6: Calculator</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Basic Math Quiz</h3>
+        <label>Enter a Number: <input type="text" id="num1"></label> <!--this is a text input box; input is a self-closing tag--> 
+        <label>Operator:
+            <select name="Operator" id="operator">
+                <option value="" disabled selected>--Please choose an option--</option>
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">x</option>
+                <option value="divide">÷ </option>
+            </select>
+        </label>     
+        <label>Enter another Number: <input type="text" id="num2"></label>
+        <label>Answer: <input type="text" id="answer"></label>
+        <label><button type="button" onclick="calculator()">Check</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script src="scripts\calculator.js">
+
+    </script>
+</body>
+
+</html>
