@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 7: Discount Machine</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Gives a 10% discount on the subtotal if its a Tues or Wed.</h3>
+        <label>Subtotal: <input type="text" id="subtotal"></label> <!--this is a text input box; input is a self-closing tag--> 
+        <label><button type="button" onclick="saveMoney()">Calculate Discount</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+    function saveMoney() {
+    //input
+    let subtotal = parseFloat(document.getElementById ("subtotal").value);
+    let dayOfWeek = new Date().getDay();
+    let total = "";
+    //processing
+    if ((dayOfWeek == 2 || dayOfWeek == 3) && (subtotal > 50)){ //If the day is Tuesday OR Wednesday AND the subtotal is more than $50...
+        total = (subtotal * .9)*1.06; //Apply a 10% discount and tax it at 6%
+    }
+    else {
+        total = subtotal * 1.06}
+    //output
+
+    document.getElementById("output").textContent = "Your total is $" + total.toFixed(2); 
+    }
+
+    </script>
+</body>
+
+</html>
