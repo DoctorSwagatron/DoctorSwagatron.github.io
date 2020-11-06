@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Odds</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 8: Sum Odds</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Adds odd numbers between 1 and n</h3>
+        <label>Enter a number: <input type="text" id="n"></label> <!--this is a text input box; input is a self-closing tag--> 
+        <label><button type="button" onclick="sumOdds()">add</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+    function sumOdds() {
+        //inputs
+     let n = parseFloat(document.getElementById("n").value); //Pulls the user input, converts it to a num, and saves it as 'n'
+     let i = 1; //initializes i as 1 (i is my looping index tool)
+     let running_total = 0; //initializes running total as zero
+        //processing
+        while (i<=n) { //creates a while loop testing if index is less than user input
+            if (i % 2 == 1) { //checks to see if index is an odd or even num
+                running_total += i; //adds the value of i to the running total
+                i +=1; //increases the value of i by one
+            } else {
+              i+=1; //don't add anything to running total, just increase index by one 
+            }     
+    }
+    //output
+    document.getElementById("output").textContent = "The sum is " +running_total; //outputs running total to user. 
+}
+    </script>
+</body>
+
+</html>
