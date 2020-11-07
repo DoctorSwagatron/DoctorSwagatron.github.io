@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Loops</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 8: Fixed Loops</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Fix the various parts of the code given</h3>
+
+        <label><button type="button" onclick="runFunction1()">Run Function 1</button></label>
+        <p><span id="output1"></span></p>
+        <hr> <!--Horizontal rule (self closing)-->
+        <label><button type="button" onclick="runFunction2()">Run Function 2</button></label>
+        <p><span id="output2"></span></p>
+        <hr>
+        <label><button type="button" onclick="runFunction3()">Run Function 3</button></label>
+        <p><span id="output3"></span></p>
+        <hr>
+        <label><button type="button" onclick="runFunction4()">Run Function 4</button></label>
+        <p><span id="output4"></span></p>
+        <hr>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        function runFunction1() {
+            let output1 ="";
+            let i = 0;
+            while (i != 2) {
+              output1 += `Part 1:${i}<br>`; 
+              i++; 
+            }
+            document.getElementById('output1').innerHTML = output1;
+
+         }
+
+        function runFunction2() {
+        var output2 = " ";
+        for (let j = 0; j < 3; j++) {
+            if (j !== 2) {
+            output2 += `Part 2:${j}, `;
+         }  else {
+            output2 += `Part 2:${j}`;}  
+        }
+        document.getElementById('output2').innerHTML = output2;
+    }
+        function runFunction3() {
+            let output3 ="";
+            for (let k = 0; k < 4; k++) {
+            output3 += k + " ";}
+        document.getElementById('output3').textContent = output3;
+    }
+    function runFunction4() {
+        let balance = 10000;
+        const rate = .10;
+        let n = 30;
+        for (let s = 0; s < n; s++){
+            interest = balance * rate;
+            balance += interest;}
+        document.getElementById('output4').textContent = interest.toFixed(2);
+        
+    }
+    </script>
+</body>
+
+</html>
