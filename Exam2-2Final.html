@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 9: Exam</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Question 2</h3>
+        <label>First number: <input type="text" id="var1"></label> <!--this is a text input box; input is a self-closing tag--> 
+        <label>Second number: <input type="text" id="var2"></label>
+        <label><button type="button" onclick="question2Function()">Run Function</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        function question2Function() {
+          //input
+        let num1 = parseFloat(document.getElementById("var1").value);
+        let num2 = parseFloat(document.getElementById("var2").value);
+        let verdict = "";
+        
+       //Processing:
+        if ((num1 > 5) && (num2 > 5)){
+            verdict = "True";
+        }
+        else if (num1 + num2 > 20){
+            verdict = "True";
+        }
+        else{
+            verdict = "False";
+        }
+       //Output:
+       document.getElementById("output").textContent = verdict;
+       
+        }
+    </script>
+</body>
+
+</html>

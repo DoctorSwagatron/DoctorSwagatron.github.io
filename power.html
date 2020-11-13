@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 09: Exam</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Question 1</h3>
+        <label><button type="button" onclick="power()">Show me the goods</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        function power() {
+        //inputs
+        let output = ""
+        let current = 0
+        //processing
+        for (let i = 0; i < 32; i++) {
+            current = 2**i;
+            if (i<31) {
+                output += current +", ";
+            } else {
+                output += current;
+            }            
+        }
+        //output
+        document.getElementById("output").innerHTML = output
+        }
+
+    </script>
+</body>
+
+</html>

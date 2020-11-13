@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam 2 - 3 Int</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 09: Exam 2</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Question 3</h3>
+        <label>start: <input type="text" id="start"></label> <!--this is a text input box; input is a self-closing tag--> 
+        <label>end: <input type="text" id="end"></label>
+        <label>divisor: <input type="text" id="divisor"></label>
+        <label><button type="button" onclick="threeInt()">Run Function</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+    function threeInt() {
+        //inputs
+        let start = parseFloat(document.getElementById("start").value);
+        let end = parseFloat(document.getElementById("end").value);
+        let divisor = parseFloat(document.getElementById("divisor").value);
+        let output = "";
+        //processing            
+        for (let index = start; index <= end; index++) {
+            if (index % divisor == 0){
+                output += index + " ";
+            }
+        }
+        //output
+        document.getElementById("output").innerHTML = output; 
+    }
+    </script>
+</body>
+
+</html>
