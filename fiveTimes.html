@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Times</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 09: Five Times</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Display the five times tables 1-12 </h3>
+
+        <label><button type="button" onclick="fiveTimes()">M A T H</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        function fiveTimes() {
+        //input
+            //initialize my variables
+            solution = 0;
+            display = "";
+        //processing
+        for (let i = 1; i < 13; i++){  //starts a for loop with i = 1 (because 1-12) and condition i<13. add 1 to i at the end of each loop)
+            solution = 5 * i; //sets up the multiplication for each loop. 
+            display += "5 x " + i + " = "+ solution +"<br>";} //display segment with html
+        //output
+        document.getElementById("output").innerHTML= display; //inner html display here (so it formats all nice)
+            
+        }
+
+    </script>
+</body>
+
+</html>
