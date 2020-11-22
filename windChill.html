@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Chill</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 10: Wind Chill</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Calculates the Wind Chill</h3>
+        <label>Temperature: <input type="text" id="temp"></label> <!--this is a text input box; input is a self-closing tag--> 
+        <label>Wind Speed: <input type="text" id="speed"></label>
+        <label><button type="button" onclick="doInputOutput()">Run Function</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p><span id="windChill"></span></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        function doInputOutput(params) {
+            ///inputs
+            let t = parseFloat(document.getElementById("temp").value); //pulls from user input and sets as variables
+            let s = parseFloat(document.getElementById("speed").value);
+            let f = 0;
+
+            ///processing
+            if (t<50 && s>3){
+                f = windChill(t,s);
+                windChill = "The windchill makes it feel like " + (f).toFixed(2) + " F.";
+                }
+            else{
+                windChill = "There is no windchill.";
+            }
+
+            //outputs
+            document.getElementById("windChill").textContent = windChill;
+            
+            
+        }
+        
+        function windChill(t,s) {
+        let f = 35.74 + (0.6215 * t) - 35.75 * (s**0.16) + (0.4275 * t)* (s**0.16); 
+        return f;
+            
+        }
+    </script>
+</body>
+
+</html>
