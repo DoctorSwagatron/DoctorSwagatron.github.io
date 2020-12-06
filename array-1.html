@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 1 </title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 12: Arrays</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Week 12 - Arrays</h3>
+        <label><button type="button" onclick="test()">DO STUFF</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+    /* Defining Table
+ * Input: no user input
+ * Processing: Test the addEnds and getMiddle functions by calling them.
+ * Output: The values returned from the addEnds and getMiddle functions.
+ */
+function test() {
+    let list1 = [ 17, 8, 9, 5, 20 ];
+    let list2 = [ 12, 4, 8, 15, 17, 5, 20, 11 ];
+
+    // Test the addEnds function by calling it two times.
+    let sum1 = addEnds(list1);
+    let sum2 = addEnds(list2);
+
+    // Test the getMiddle function by calling it two times.
+    let mid1 = getMiddle(list1);
+    let mid2 = getMiddle(list2);
+
+    // Build a string to display to the user.
+    let output =
+                    "The Sum of the Ends of list 1 is " + sum1 + '<br>' + 
+                    "The Sum of the Ends of list 2 is " + sum2 + '<br>' +
+                    "The median of list 1 is " + mid1 + '<br>' +
+                    "The median of list 2 is " + mid2 + '<br>'+'<br>'+
+                     "<strong>boo-yeah</strong>";
+
+    // Display the output string for the user to see.
+    document.getElementById('output').innerHTML = output;
+}
+function addEnds(list){
+///for item in list, add.
+let bacon = 0;
+for (let index = 0; index < list.length; index++) {
+    if (index == 0 || index == list.length-1){
+        bacon += list[index];
+    }
+}
+
+
+return bacon;
+}
+function getMiddle(list){
+let bacon = 0;
+let middle = list.length/2;
+if (middle %2 == 0){
+    bacon = (list[middle]+list[middle-1])/2;
+}
+else{
+    bacon = list[Math.floor(middle)];}
+   
+ return bacon; 
+
+}
+    
+
+
+</script>
+</body>
+
+</html>
