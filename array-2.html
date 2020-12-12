@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 2</title>
+    <link rel="stylesheet" href= "css/style.css"> <!--External CSS reference-->
+</head>
+
+<body>
+    <header>
+        <h1>Week 13: Array 2</h1>
+        <h2>Kevin Davis</h2>
+    </header>
+    <main>
+        <h3>Array Assignment 2: Electric Boogaloo</h3>
+        <label><button type="button" onclick="test()">>>>PUSH ME<<<</button></label>
+        <hr> <!--Horizontal rule (self closing)-->
+        <p><span id="output"></span></p>
+    </main>
+    <footer>
+        &copy;2020 &bull; Kevin Davis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+/* Defining Table
+ * Input: no user input
+ * Processing: Test the countEvens and multiply functions by calling them.
+ * Output: The values returned from the countEvens and multiply functions.
+ */
+ function test() {
+    let list1 = [ 17, 8, 9, 5, 20 ];
+    let list2 = [ 12, 4, 8, 15, 17, 5, 20, 11 ];
+
+    // Test the countEvens function by calling it two times.
+    let count1 = countEvens(list1);
+    let count2 = countEvens(list2);
+
+    // Test the multiply function by calling it two times.
+    let mult1 = multiply(list1, 3);
+    let mult2 = multiply(list2, 4);
+
+    // Build a string to display to the user.
+    let output =
+           "For list one, there are <strong>" + count1 +"</strong> even numbers." + '<br>' +
+            "List two has <strong>" + count2 + '</strong>.<br>' +
+            "List one, multiplied by the multiplier returned <strong>" +mult1 + '</strong>.<br>' +
+            "And list two multiplied by the multiplier returned <strong>" + mult2 + '</strong>.<br>' +
+            "<br><strong> >>>Mission accomplished<<<</strong>";
+
+    // Display the output string for the user to see.
+    document.getElementById('output').innerHTML = output;
+}
+function countEvens(list){
+//Counts and returns the even intergers in a given array. 
+let bacon = 0;
+let i = 0;
+while (i<list.length) {
+    if (list[i]%2==0){
+        bacon ++;
+    }
+    i++
+    
+}
+return bacon;
+}
+function multiply(list, multiplier){
+let bacon = [];
+for (let index = 0; index < list.length; index++) {
+    let egg = list[index]*multiplier;
+    bacon.push(egg);
+    
+}
+
+    return bacon;
+
+
+
+}
+    </script>
+</body>
+
+</html>
